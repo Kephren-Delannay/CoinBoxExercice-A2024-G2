@@ -28,11 +28,12 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-        cd src
     - name: Test with unittest
       run: |
+        cd src 
         python -m unittest
     - name : Generate coverage report
       run: |
+        cd src 
         coverage run -m unittest
         coverage html
